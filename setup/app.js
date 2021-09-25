@@ -25,5 +25,21 @@ const weekdays = [
 const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.deadline');
 const items = document.querySelectorAll('.deadline-format h4'); 
-console.log(items); 
+
+let futureDate = new Date(2022, 3, 24, 08, 00, 00);
+console.log(futureDate); 
+
+const year = futureDate.getFullYear(); 
+const hours = futureDate.getHours(); 
+const minutes = futureDate.getMinutes(); 
+
+let month = futureDate.getMonth();
+month = months[month]; 
+
+const date = futureDate.getDate(); 
+const weekday = futureDate.getDay();
+weekday = weekdays[weekday]; 
+
+giveaway.textContent = `giveaway ends on ${date} ${month} ${year} ${hours}: ${minutes}am`;
+
 
